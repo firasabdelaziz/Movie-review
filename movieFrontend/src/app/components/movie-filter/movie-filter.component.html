@@ -1,0 +1,11 @@
+<div class="space-y-4">
+  <h2 class="text-xl font-semibold">Filter by Publication Date:</h2>
+  <input type="date" [(ngModel)]="publicationDate">
+  <button (click)="filterByPublication()">Filter</button>
+</div>
+
+<div class="space-y-4 mt-8">
+  <h2 class="text-xl font-semibold">Filter by Opening Date:</h2>
+  <input type="date" [(ngModel)]="openingDate">
+  <button (click)="filterByOpening()">Filter</button>
+</div>

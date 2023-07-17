@@ -1,0 +1,11 @@
+<div class="flex flex-row space-x-8">
+  <div class="w-1/4">
+    <app-movie-filter
+      (filterByPublicationDate)="onFilterByPublicationDate($event)"
+      (filterByOpeningDate)="onFilterByOpeningDate($event)"
+    ></app-movie-filter>
+  </div>
+  <div class="w-3/4">
+    <router-outlet></router-outlet>
+  </div>
+</div>

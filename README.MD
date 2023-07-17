@@ -1,0 +1,174 @@
+# Movie Review API
+
+This repository contains the source code for the Movie Review API, which allows users to manage movie information through CRUD (Create, Read, Update, Delete) operations. The API is built using the Laravel framework and follows the Repository Design Pattern to separate data access logic from the controller.
+
+## Design Pattern: Repository Pattern
+
+The Movie Review API utilizes the Repository Design Pattern to manage data access and abstraction. The pattern provides a clear separation of concerns by abstracting data retrieval and manipulation from the controller logic. The repository classes encapsulate database interactions, promoting code reusability and maintainability. This design choice ensures that the API is scalable and can handle increasing data volumes without sacrificing performance.
+
+## API Endpoints
+
+The following API endpoints are available:
+
+- `GET /api/movies`: Retrieve a paginated list of movies. By default, 10 movies are loaded per page, but you can specify the number of movies per page using the `perPage` query parameter.
+- `POST /api/movies`: Add a new movie to the database. The request body should contain the movie details in JSON format. Validation is performed to ensure the data is valid before creating the movie.
+- `GET /api/movies/{id}`: Retrieve details for a specific movie by providing its ID.
+- `PUT /api/movies/{id}`: Update a movie's information by providing its ID and the updated details in the request body. Validation is performed to ensure the data is valid before updating the movie.
+- `DELETE /api/movies/{id}`: Delete a movie by providing its ID.
+
+## Request Validation
+
+The API implements request validation using Laravel's built-in validation features. For each API endpoint that requires user input, the corresponding validation rules are defined to ensure that the data provided is valid. If a request fails validation, the API returns a JSON response with error messages and an HTTP status code of 400 (Bad Request). Proper request validation ensures data integrity and contributes to the API's scalability by preventing incorrect or invalid data from being stored.
+
+## Error Handling
+
+The API includes custom exception handling to gracefully handle errors. When an unexpected error occurs, the API responds with an appropriate error message in JSON format, along with the corresponding HTTP status code. The messages are language-specific and can be translated based on the user's preferred language provided in the `Accept-Language` header. Robust error handling enhances the API's scalability by providing meaningful error responses and facilitating easier debugging and issue resolution.
+
+## Language Support
+
+The Movie Review API supports internationalization (i18n) to provide responses in multiple languages. It automatically detects the user's preferred language from the `Accept-Language` header and returns responses in the corresponding language, if available. The language files for English and French are provided in the `resources/lang` folder. Language support allows the API to be more accessible and scalable to a diverse user base.
+
+## Getting Started
+
+To set up the Movie Review API locally, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/your-username/movie-review-api.git`
+2. Install dependencies: `composer install`
+3. Create a `.env` file: `cp .env.example .env`
+4. Generate an application key: `php artisan key:generate`
+5. Set up your database credentials in the `.env` file.
+6. Run database migrations: `php artisan migrate`
+7. Seed initial data (optional): `php artisan db:seed`
+
+Once the setup is complete, you can start the local development server: `php artisan serve`
+
+## Contribution
+
+Contributions to the Movie Review API are welcome! If you find any issues or have suggestions for improvement, feel free to create a pull request or open an issue.
+
+## License
+
+The Movie Review API is open-source software licensed under the MIT License. See the `LICENSE` file for more details.
+
+---
+## Main goal
+
+In this updated README, we've specified that the design pattern, request validation, error handling, and language support are all geared towards ensuring scalability of the API. We've explained how each aspect contributes to making the API more scalable and capable of handling increased data and user loads effectively.
+
+# Angular Movie Review App
+
+This project is an Angular-based  Movie Review application that allows users to browse, search, and review movies. The app follows the MVC (Model-View-Controller) pattern for better code organization and maintainability. It also utilizes Tailwind CSS for styling and communicates with a Laravel-based backend to handle movie data.
+
+## Features
+
+- Display a list of movies with details such as title, description, writer, image, and date.
+- View individual movie details.
+- Filter movies by publication date and opening date.
+
+## Prerequisites
+
+To run this application, you need the following installed on your machine:
+
+1. Node.js (with npm)
+2. Angular CLI
+3. Backend server (Laravel-based API) with CORS enabled
+
+## Getting Started
+
+1. Clone the repository:
+
+```
+git clone https://github.com/your-username/angular-scalable-movie-review.git
+```
+
+2. Navigate to the project directory:
+
+```
+cd movieFrontend
+```
+
+3. Install dependencies:
+
+```
+npm install
+```
+
+4. Start the Angular development server:
+
+```
+ng serve
+```
+
+5. Open your browser and navigate to `http://localhost:4200` to see the app in action.
+
+## Configuration
+
+Before running the application, make sure to configure the backend API URL in the `MovieService` located at `src/app/services/movie.service.ts`. Replace `http://localhost/api/movies` with the actual URL of your Laravel backend API.
+
+## Project Structure
+
+```
+angular-scalable-movie-review/
+|-- e2e/
+|-- src/
+|   |-- app/
+|   |   |-- components/
+|   |   |   |-- movie-details/
+|   |   |   |   |-- movie-details.component.ts
+|   |   |   |   |-- movie-details.component.html
+|   |   |   |-- movie-filter/
+|   |   |   |   |-- movie-filter.component.ts
+|   |   |   |   |-- movie-filter.component.html
+|   |   |   |-- movie-list/
+|   |   |   |   |-- movie-list.component.ts
+|   |   |   |   |-- movie-list.component.html
+|   |   |-- models/
+|   |   |   |-- movie.model.ts
+|   |   |-- services/
+|   |   |   |-- movie.service.ts
+|   |   |-- app-routing.module.ts
+|   |   |-- app.component.ts
+|   |   |-- app.component.html
+|   |   |-- app.component.css
+|   |   |-- app.module.ts
+|   |-- assets/
+|   |-- environments/
+|   |   |-- environment.prod.ts
+|   |   |-- environment.ts
+|   |-- index.html
+|   |-- styles.scss
+|-- .angular.json
+|-- package.json
+|-- tsconfig.json
+|-- ...
+```
+
+## Contributing
+
+Contributions to the project are welcome! If you find any bugs, have suggestions for improvements, or want to add new features, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the `LICENSE` file for details.
+
+## Acknowledgments
+
+Thank you to all the contributors who made this project possible!
+
+Happy coding!
+
+
+## TO DO API 
+
+- ADAPT CORS ORIGIN (very important)
+- Unit test (option)
+- scribe documentation (important)
+- Contract design patter (option)
+- API gateway KONG (option)
+- Authorization microserive (option)
+- check comment code (important)
+
+## TO DO FRONT
+- all API work (important)
+- improvement design UI/UX tailwind insperation (important)
+- check comment code (important)

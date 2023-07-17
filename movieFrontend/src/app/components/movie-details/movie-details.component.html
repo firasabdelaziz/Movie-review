@@ -1,0 +1,11 @@
+<div *ngIf="movie">
+  <h2 class="text-3xl font-bold">{{ movie.title }}</h2>
+  <p class="text-gray-600">Description: {{ movie.description }}</p>
+  <p class="text-gray-600">Writer: {{ movie.writer }}</p>
+  <p class="text-gray-600">Release Date: {{ movie.date }}</p>
+  <img [src]="movie.image" alt="{{ movie.title }}" class="w-48 h-64 mt-4 mb-2 object-cover">
+  <a [routerLink]="['/movies']" class="text-blue-600">Back to Movie List</a>
+</div>
+<div *ngIf="!movie" class="text-gray-600">
+  <p>Movie details not found.</p>
+</div>
