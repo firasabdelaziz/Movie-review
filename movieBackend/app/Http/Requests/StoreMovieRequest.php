@@ -27,5 +27,6 @@ class StoreMovieRequest extends FormRequest
             'writer' => 'required|string|max:255',
             'image' => 'nullable|url',
             'date' => 'required|date',
-        ];    }
+        ];
+    }
 }

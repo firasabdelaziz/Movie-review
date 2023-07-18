@@ -158,17 +158,3 @@ Thank you to all the contributors who made this project possible!
 Happy coding!
 
 
-## TO DO API 
-
-- ADAPT CORS ORIGIN (very important)
-- Unit test (option)
-- scribe documentation (important)
-- Contract design patter (option)
-- API gateway KONG (option)
-- Authorization microserive (option)
-- check comment code (important)
-
-## TO DO FRONT
-- all API work (important)
-- improvement design UI/UX tailwind insperation (important)
-- check comment code (important)
