@@ -1,12 +1,12 @@
-# Movie Review API
+## Movie Review API :movie_camera:
 
 This repository contains the source code for the Movie Review API, which allows users to manage movie information through CRUD (Create, Read, Update, Delete) operations. The API is built using the Laravel framework and follows the Repository Design Pattern to separate data access logic from the controller.
 
-## Design Pattern: Repository Pattern
+## Design Pattern: Repository Pattern :gear:
 
 The Movie Review API utilizes the Repository Design Pattern to manage data access and abstraction. The pattern provides a clear separation of concerns by abstracting data retrieval and manipulation from the controller logic. The repository classes encapsulate database interactions, promoting code reusability and maintainability. This design choice ensures that the API is scalable and can handle increasing data volumes without sacrificing performance.
 
-## API Endpoints
+## API Endpoints :rocket:
 
 The following API endpoints are available:
 
@@ -16,19 +16,19 @@ The following API endpoints are available:
 - `PUT /api/movies/{id}`: Update a movie's information by providing its ID and the updated details in the request body. Validation is performed to ensure the data is valid before updating the movie.
 - `DELETE /api/movies/{id}`: Delete a movie by providing its ID.
 
-## Request Validation
+## Request Validation :heavy_check_mark:
 
 The API implements request validation using Laravel's built-in validation features. For each API endpoint that requires user input, the corresponding validation rules are defined to ensure that the data provided is valid. If a request fails validation, the API returns a JSON response with error messages and an HTTP status code of 400 (Bad Request). Proper request validation ensures data integrity and contributes to the API's scalability by preventing incorrect or invalid data from being stored.
 
-## Error Handling
+## Error Handling :warning:
 
 The API includes custom exception handling to gracefully handle errors. When an unexpected error occurs, the API responds with an appropriate error message in JSON format, along with the corresponding HTTP status code. The messages are language-specific and can be translated based on the user's preferred language provided in the `Accept-Language` header. Robust error handling enhances the API's scalability by providing meaningful error responses and facilitating easier debugging and issue resolution.
 
-## Language Support
+## Language Support :globe_with_meridians:
 
 The Movie Review API supports internationalization (i18n) to provide responses in multiple languages. It automatically detects the user's preferred language from the `Accept-Language` header and returns responses in the corresponding language, if available. The language files for English and French are provided in the `resources/lang` folder. Language support allows the API to be more accessible and scalable to a diverse user base.
 
-## Getting Started
+## Getting Started :rocket:
 
 To set up the Movie Review API locally, follow these steps:
 
@@ -40,40 +40,33 @@ To set up the Movie Review API locally, follow these steps:
 6. Run database migrations: `php artisan migrate`
 7. Seed initial data (optional): `php artisan db:seed`
 
-Once the setup is complete, you can start the local development server: `php artisan serve`
+Once the setup is complete, you can start the local development server: `php artisan serve` :computer:
 
-## Contribution
-
-Contributions to the Movie Review API are welcome! If you find any issues or have suggestions for improvement, feel free to create a pull request or open an issue.
-
-## License
-
-The Movie Review API is open-source software licensed under the MIT License. See the `LICENSE` file for more details.
-
----
-## Main goal
+## Highlight API :star:
 
 In this updated README, we've specified that the design pattern, request validation, error handling, and language support are all geared towards ensuring scalability of the API. We've explained how each aspect contributes to making the API more scalable and capable of handling increased data and user loads effectively.
 
-# Angular Movie Review App
+---
+
+# Angular Movie Review App :clapper:
 
 This project is an Angular-based  Movie Review application that allows users to browse, search, and review movies. The app follows the MVC (Model-View-Controller) pattern for better code organization and maintainability. It also utilizes Tailwind CSS for styling and communicates with a Laravel-based backend to handle movie data.
 
-## Features
+## Features :sparkles:
 
 - Display a list of movies with details such as title, description, writer, image, and date.
 - View individual movie details.
 - Filter movies by publication date and opening date.
 
-## Prerequisites
+## Prerequisites :clipboard:
 
 To run this application, you need the following installed on your machine:
 
-1. Node.js (with npm)
-2. Angular CLI
-3. Backend server (Laravel-based API) with CORS enabled
+1. Node.js (with npm) :heavy_plus_sign:
+2. Angular CLI :heavy_plus_sign:
+3. Backend server (Laravel-based API) with CORS enabled :heavy_plus_sign:
 
-## Getting Started
+## Getting Started :rocket:
 
 1. Clone the repository:
 
@@ -99,13 +92,13 @@ npm install
 ng serve
 ```
 
-5. Open your browser and navigate to `http://localhost:4200` to see the app in action.
+5. Open your browser and navigate to `http://localhost:4200` to see the app in action. :globe_with_meridians:
 
-## Configuration
+## Configuration :wrench:
 
 Before running the application, make sure to configure the backend API URL in the `MovieService` located at `src/app/services/movie.service.ts`. Replace `http://localhost/api/movies` with the actual URL of your Laravel backend API.
 
-## Project Structure
+## Project Structure :file_folder:
 
 ```
 angular-scalable-movie-review/
@@ -143,18 +136,16 @@ angular-scalable-movie-review/
 |-- ...
 ```
 
-## Contributing
+## Contributing :raised_hands:
 
 Contributions to the project are welcome! If you find any bugs, have suggestions for improvements, or want to add new features, please open an issue or submit a pull request.
 
-## License
+## License :scroll:
 
 This project is licensed under the MIT License - see the `LICENSE` file for details.
 
-## Acknowledgments
+## Acknowledgments :pray:
 
 Thank you to all the contributors who made this project possible!
 
-Happy coding!
-
-
+Happy coding! :smiley:
