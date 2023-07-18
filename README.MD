@@ -94,6 +94,10 @@ ng serve
 
 5. Open your browser and navigate to `http://localhost:4200` to see the app in action. :globe_with_meridians:
 
+## MVC Design Pattern :gear:
+
+The Angular Movie Review App is structured following the MVC (Model-View-Controller) design pattern. This pattern allows clear separation of data, presentation, and user interaction components, making the codebase more maintainable and scalable.
+
 ## Configuration :wrench:
 
 Before running the application, make sure to configure the backend API URL in the `MovieService` located at `src/app/services/movie.service.ts`. Replace `http://localhost/api/movies` with the actual URL of your Laravel backend API.

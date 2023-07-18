@@ -1,12 +1,12 @@
 ## TO DO FRONTEND
-🚀 All API work (important)
-💅 Improvement design UI/UX with TailwindCSS inspiration (important)
-🕵️ Check comment code (important)
-🐳 Dockerize APP
+- 🚀 Implement all API interactions (high priority)
+- 💅 Enhance UI/UX design with inspiration from TailwindCSS (high priority)
+- 🕵️ Review and optimize code comments (high priority)
+- 🐳 Dockerize the frontend application for easy deployment (medium priority)
+
 ## TO DO BACKEND
-⚙️ Adapt CORS origin (very important)
-✅ Unit test (optional)
-📝 Scribe documentation (important)
-🦍 API gateway KONG (optional)
-🐳 Dockerize APP
-Please note that the priorities indicated by the emojis are subjective and meant to provide a visual indication of the importance or urgency of each task. Feel free to adjust the priorities based on your project's specific needs and timelines.
+- ⚙️ Update CORS settings to allow the appropriate origins (very high priority)
+- ✅ Write unit tests to ensure code quality and reliability (optional but recommended)
+- 📝 Document the API using Scribe documentation (high priority)
+- 🦍 Explore the option of integrating the API with an API gateway like KONG (optional)
+- 🐳 Dockerize the backend application for efficient deployment (medium priority)
