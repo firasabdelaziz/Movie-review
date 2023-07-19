@@ -9,13 +9,14 @@ import { Movie } from '../models/movie.model';
   providedIn: 'root',
 })
 export class MovieService {
-  private apiUrl = 'http://localhost/api/movies';
+  private apiUrl = 'http://127.0.0.1:8000/api/movies';
 
   constructor(private http: HttpClient) {}
 
   // Fetches all movies from the backend API
-  getMovies(): Observable<Movie[]> {
-    return this.http.get<Movie[]>(this.apiUrl);
+  getMovies(page: number): Observable<any> {
+    const url = `${this.apiUrl}?page=${page}`;
+    return this.http.get<any>(url);
   }
 
   // Fetches a single movie by its ID from the backend API

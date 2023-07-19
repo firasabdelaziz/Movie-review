@@ -1,11 +1,18 @@
-<div class="flex flex-row space-x-8">
-  <div class="w-1/4">
-    <app-movie-filter
-      (filterByPublicationDate)="onFilterByPublicationDate($event)"
-      (filterByOpeningDate)="onFilterByOpeningDate($event)"
-    ></app-movie-filter>
-  </div>
-  <div class="w-3/4">
-    <router-outlet></router-outlet>
+<div class="bg-gradient-to-b from-blue-400 via-purple-500 to-pink-500 min-h-screen">
+  <div class="container mx-auto px-4 py-8">
+    <div class="flex flex-col lg:flex-column space-y-4 ">
+      <!-- Movie Filter Section (1/5 width) -->
+      <div class="bg-white  bg-opacity-75 shadow-md rounded-md p-4 mb-8"> <!-- Add mb-8 class here -->
+        <h3 class="text-xl font-semibold mb-2">Movie Filters</h3>
+        <app-movie-filter (filterByPublicationDate)="onFilterByPublicationDate($event)"
+          (filterByOpeningDate)="onFilterByOpeningDate($event)"></app-movie-filter>
+      </div>
+
+      <!-- Movie List Section (4/5 width) -->
+      <div class="w-full bg-white bg-opacity-75 rounded-lg shadow-lg p-4">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Movie List</h2>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
   </div>
 </div>

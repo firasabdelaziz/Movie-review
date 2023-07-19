@@ -1,3 +1,4 @@
+// movie-list.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../../models/movie.model';
 import { MovieService } from '../../services/movie.service';
@@ -9,19 +10,19 @@ import { MovieService } from '../../services/movie.service';
 })
 export class MovieListComponent implements OnInit {
   movies: Movie[] = [];
+  currentPage = 1;
+  totalPages = 1;
 
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
     this.fetchMovies();
-    console.log(this.movies);
-
   }
 
   fetchMovies(): void {
-    this.movieService.getMovies().subscribe(movies => {
-      // Sort movies by publication date in descending order
-      this.movies = movies.sort((a, b) => new Date(b.created_at!).getTime() - new Date(a.created_at!).getTime());
+    this.movieService.getMovies(this.currentPage).subscribe((response: any) => {
+      this.movies = [...this.movies, ...response.data];
+      this.totalPages = response.last_page;
     });
   }
 
@@ -29,5 +30,16 @@ export class MovieListComponent implements OnInit {
     this.movieService.deleteMovie(id).subscribe(() => {
       this.fetchMovies();
     });
+  }
+
+  loadMoreMovies(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+      this.fetchMovies();
+    }
+  }
+
+  hasMoreMovies(): boolean {
+    return this.currentPage < this.totalPages;
   }
 }

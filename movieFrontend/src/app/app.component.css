@@ -1,0 +1,26 @@
+/* styles.css (or your separate stylesheet) */
+
+/* Center the main content horizontally */
+.container {
+  max-width: 1200px;
+}
+
+/* Style the movie filter form */
+.app-movie-filter {
+  /* Add your specific styles for the movie filter component */
+}
+
+/* Style the movie list */
+.router-outlet {
+  /* Add your specific styles for the movie list */
+}
+/* Customize the width and height of the movie filter card */
+:host {
+  width: 100%; /* Set the width to 100% to expand the card to its container */
+  max-width: 400px; /* Set a max-width to limit the card's width on larger screens */
+}
+
+/* Add some padding to the movie filter card */
+.bg-white {
+  padding: 20px;
+}

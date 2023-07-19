@@ -9,7 +9,7 @@ import { MovieService } from '../../services/movie.service';
   styleUrls: ['./movie-details.component.css']
 })
 export class MovieDetailsComponent implements OnInit {
-  movie: Movie | null = null; ;
+  movie: Movie | null = null;
 
   constructor(
     private route: ActivatedRoute,

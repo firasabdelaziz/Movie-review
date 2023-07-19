@@ -1,15 +1,22 @@
-<div *ngIf="movies.length > 0">
-  <h2 class="text-3xl font-bold mb-4">Movie List</h2>
-  <ul class="space-y-4">
-    <li *ngFor="let movie of movies" class="border rounded p-4">
-      <h3 class="text-xl font-semibold">{{ movie.title }}</h3>
-      <p class="text-gray-600">{{ movie.description }}</p>
-      <p class="text-gray-600">By {{ movie.writer }}</p>
-      <p class="text-gray-600">Publication Date: {{ movie.created_at | date: 'MMM. d, yyyy' }}</p>
-      <a [routerLink]="['/movies', movie.id]" class="text-blue-600">Read Review</a>
-    </li>
-  </ul>
-</div>
-<div *ngIf="movies.length === 0" class="text-gray-600">
-  <p>No movies found.</p>
+<div class="py-3 sm:max-w-xl sm:mx-auto">
+  <ng-container *ngFor="let movie of movies">
+    <div class="mb-4 bg-white shadow-lg border-gray-200 max-h-96 border sm:rounded-3xl p-6 md:p-8 flex space-x-4 md:space-x-8">
+      <div class="h-48 w-48 md:h-auto md:w-1/2">
+        <img class="rounded-3xl shadow-lg object-cover w-full h-full" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/1LRLLWGvs5sZdTzuMqLEahb88Pc.jpg" alt="{{ movie.title }}">
+      </div>
+      <div class="flex flex-col w-full md:w-1/2 space-y-4">
+        <div class="flex justify-between items-start">
+          <h2 class="text-2xl md:text-3xl font-bold">{{ movie.title }}</h2>
+        </div>
+        <div>
+          <div class="text-sm text-gray-500">{{ movie.created_at | date: 'mediumDate' }}</div>
+        </div>
+        <p class="text-gray-600 max-h-24 md:max-h-32 overflow-y-hidden">{{ movie.description }}</p>
+        <div class="flex text-lg font-bold text-a">Writer : {{ movie.writer }}</div>
+      </div>
+    </div>
+  </ng-container>
+  <div class="text-center py-4" *ngIf="hasMoreMovies()">
+    <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded" (click)="loadMoreMovies()">Show More</button>
+  </div>
 </div>
