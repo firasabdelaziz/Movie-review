@@ -105,7 +105,7 @@ Before running the application, make sure to configure the backend API URL in th
 ## Project Structure :file_folder:
 
 ```
-angular-scalable-movie-review/
+movieFrontend/
 |-- e2e/
 |-- src/
 |   |-- app/
