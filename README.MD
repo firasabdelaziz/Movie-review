@@ -49,13 +49,15 @@ By using logging, the API can keep track of various events, such as:
 
 To set up the Movie Review API locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/movie-review-api.git`
+1. Clone the repository: `git clone https://github.com/firasabdelaziz/Movie-review.git`
 2. Install dependencies: `composer install`
-3. Create a `.env` file: `cp .env.example .env`
-4. Generate an application key: `php artisan key:generate`
-5. Set up your database credentials in the `.env` file.
-6. Run database migrations: `php artisan migrate`
-7. Seed initial data (optional): `php artisan db:seed`
+3. Navigate to the repo directory `cd Movie-review`
+3. Navigate to the project directory `cd movieFrontend`
+4. Create a `.env` file: `cp .env.example .env`
+5. Generate an application key: `php artisan key:generate`
+6. Set up your database credentials in the `.env` file.
+7. Run database migrations: `php artisan migrate`
+8. Seed initial data (optional): `php artisan db:seed`
 
 Once the setup is complete, you can start the local development server: `php artisan serve` :computer:
 
@@ -88,10 +90,14 @@ To run this application, you need the following installed on your machine:
 1. Clone the repository:
 
 ```
-git clone https://github.com/your-username/angular-scalable-movie-review.git
+git clone https://github.com/firasabdelaziz/Movie-review.git`
 ```
 
 2. Navigate to the project directory:
+
+```
+cd Movie-review
+```
 
 ```
 cd movieFrontend
