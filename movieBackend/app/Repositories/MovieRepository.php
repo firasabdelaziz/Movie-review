@@ -17,7 +17,7 @@ class MovieRepository implements MovieRepositoryInterface
     public function all($perPage = 10): LengthAwarePaginator
     {
         // Use the Movie model to paginate all movies.
-        return Movie::paginate($perPage);
+        return Movie::query()->fastPaginate($perPage);
     }
 
     /**
