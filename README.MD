@@ -28,7 +28,7 @@ The API includes custom exception handling to gracefully handle errors. When an 
 
 The Movie Review API supports internationalization (i18n) to provide responses in multiple languages. It automatically detects the user's preferred language from the `Accept-Language` header and returns responses in the corresponding language, if available. The language files for English and French are provided in the `resources/lang` folder. Language support allows the API to be more accessible and scalable to a diverse user base.
 
-## Enhancing Logging and Log Viewer Integration :globe_with_meridians:
+## Enhancing Logging and Log Viewer Integration :bar_chart:
 
 The Movie Review API uses Laravel's built-in logging capabilities to facilitate easier debugging and monitoring of the application. Laravel provides robust logging features that allow developers to record application activities, errors, and other important events.
 
@@ -40,11 +40,8 @@ By using logging, the API can keep track of various events, such as:
 
 - :bug: **Debug Logging:** For developers, the API can include debug logs that capture specific variables, states, or other information to help diagnose and fix problems during development and testing.
 
-To make debugging and monitoring even more efficient, the API can leverage a log viewer package. The log viewer allows developers to view logs in a more user-friendly format, filter logs by severity, date, or context, and search for specific log entries.
 
-By using logging and log viewer, the API can better handle scalability concerns as it grows. Logs help identify performance bottlenecks, track potential security issues, and ensure data integrity.
-
-:bar_chart: **Log Viewer Integration:** The API integrates a log viewer package to enhance debugging and monitoring. The log viewer provides visualizations and analytics, making it easier to understand application activities and trends.
+**Log Viewer Integration:** The API integrates a log viewer package to enhance debugging and monitoring. The log viewer provides visualizations and analytics, making it easier to understand application activities and trends.
 
 
 
