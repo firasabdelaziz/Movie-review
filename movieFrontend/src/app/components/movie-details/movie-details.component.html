@@ -1,11 +1,16 @@
-<div *ngIf="movie">
-  <h2 class="text-3xl font-bold">{{ movie.title }}</h2>
-  <p class="text-gray-600">Description: {{ movie.description }}</p>
-  <p class="text-gray-600">Writer: {{ movie.writer }}</p>
-  <p class="text-gray-600">Release Date: {{ movie.date }}</p>
-  <img [src]="movie.image" alt="{{ movie.title }}" class="w-48 h-64 mt-4 mb-2 object-cover">
-  <a [routerLink]="['/movies']" class="text-blue-600">Back to Movie List</a>
+<!-- Movie item section -->
+<div *ngIf="movie" class="movie-details">
+  <h3 class="movie-title"><strong>Title : </strong>{{ movie.title }}</h3>
+  <img class="movie-poster" [src]="movie.image" alt="{{ movie.title }} Poster">
+  <div class="movie-info">
+    <p class="movie-description">{{ movie.description }}</p>
+    <p class="movie-info-item"><strong>Writer:</strong> {{ movie.writer }}</p>
+    <p class="movie-info-item"><strong>Release Date:</strong> {{ movie.date }}</p>
+  </div>
+  <a [routerLink]="['/movies']" class="back-link">Back to Movie List</a>
 </div>
-<div *ngIf="!movie" class="text-gray-600">
+
+<!-- Movie not found section -->
+<div *ngIf="!movie" class="text-black-600">
   <p>Movie details not found.</p>
 </div>

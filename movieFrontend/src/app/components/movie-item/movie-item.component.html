@@ -1,0 +1,18 @@
+<div
+  (click)="NavigteToDetail()"
+  class="mb-4 bg-white shadow-lg border-gray-200 max-h-96 border sm:rounded-3xl p-6 md:p-8 flex space-x-4 md:space-x-8">
+  <div class="h-48 w-48 md:h-auto md:w-1/2">
+    <img class="rounded-3xl shadow-lg object-cover w-full h-full"
+    [src]="movie?.image" alt="{{ movie?.image }}">
+  </div>
+  <div class="flex flex-col w-full md:w-1/2 space-y-4">
+    <div class="flex justify-between items-start">
+      <h2 class="text-2xl md:text-3xl font-bold">{{ movie?.title }}</h2>
+    </div>
+    <div>
+      <div class="text-sm text-gray-500">{{ movie?.created_at | date: 'mediumDate' }}</div>
+    </div>
+    <p class="text-gray-600 max-h-24 md:max-h-32 overflow-y-hidden">{{ movie?.description }}</p>
+    <div class="flex text-lg font-bold text-a">Writer : {{ movie?.writer }}</div>
+  </div>
+</div>

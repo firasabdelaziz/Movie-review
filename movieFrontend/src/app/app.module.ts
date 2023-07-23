@@ -7,15 +7,16 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
-import { MovieFilterComponent } from './components/movie-filter/movie-filter.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { MovieItemComponent } from './components/movie-item/movie-item.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieListComponent,
-    MovieFilterComponent,
     MovieDetailsComponent,
+    MovieItemComponent,
   ],
   imports: [
     BrowserModule,

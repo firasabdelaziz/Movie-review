@@ -1,22 +1,60 @@
-<div class="py-3 sm:max-w-xl sm:mx-auto">
-  <ng-container *ngFor="let movie of movies">
-    <div class="mb-4 bg-white shadow-lg border-gray-200 max-h-96 border sm:rounded-3xl p-6 md:p-8 flex space-x-4 md:space-x-8">
-      <div class="h-48 w-48 md:h-auto md:w-1/2">
-        <img class="rounded-3xl shadow-lg object-cover w-full h-full" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/1LRLLWGvs5sZdTzuMqLEahb88Pc.jpg" alt="{{ movie.title }}">
-      </div>
-      <div class="flex flex-col w-full md:w-1/2 space-y-4">
-        <div class="flex justify-between items-start">
-          <h2 class="text-2xl md:text-3xl font-bold">{{ movie.title }}</h2>
+<div class="bg-white  bg-opacity-75 shadow-md rounded-md p-4 mb-8"> <!-- Add mb-8 class here -->
+  <h3 class="text-xl font-semibold mb-2">Movie Filters</h3>
+  <div class="bg-white bg-opacity-50 shadow-md rounded-md p-4">
+    <div class="space-y-4">
+
+      <!-- NYT Critic’s Pick Filter -->
+      <div class="flex flex-col space-y-2">
+        <label class="text-lg font-semibold">NYT Critic’s Pick:</label>
+        <div class="flex flex-col md:flex-row md:space-x-4">
+          <input type="text"
+            class=" flex-1 rounded-md p-3 border border-gray-300 focus:outline-none focus:border-blue-500 transition w-72"
+            placeholder="Enter search keyword" [(ngModel)]="movieNameFilter" />
+          <button  *ngIf="!filtersApplied" (click)="applyFilter()"
+            class=" flex-3 px-6 py-3 rounded-md text-white font-bold bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 transition">
+            Apply
+          </button>
+          <button *ngIf="filtersApplied" (click)="cancelFilters()"
+          class="flex-3 px-6 py-3 rounded-md text-white font-bold bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 transition">
+          Cancel Filters
+        </button>
         </div>
-        <div>
-          <div class="text-sm text-gray-500">{{ movie.created_at | date: 'mediumDate' }}</div>
-        </div>
-        <p class="text-gray-600 max-h-24 md:max-h-32 overflow-y-hidden">{{ movie.description }}</p>
-        <div class="flex text-lg font-bold text-a">Writer : {{ movie.writer }}</div>
       </div>
+
+      <!-- Order By Filter -->
+      <div class="flex flex-col space-y-2">
+        <label class="text-lg font-semibold">Results sorted by:</label>
+        <div class="flex flex-col md:flex-row md:space-x-4">
+          <!-- Flexbox with space-x-4 for creating space on large screens -->
+          <button *ngIf="!sortApplied" (click)="sortByPublicationDate()"
+            class="flex-1 px-6 py-3 rounded-md text-white font-bold bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 transition">
+            Publication Date
+          </button>
+          <button *ngIf="!sortApplied" (click)="sortByOpeningDate()"
+            class="flex-1 px-6 py-3 rounded-md text-white font-bold bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 transition">
+            Opening Date
+          </button>
+          <button *ngIf="sortApplied" (click)="cancelSorting()"
+          class="flex-1 px-6 py-3 rounded-md text-white font-bold bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 transition">
+          Cancel Filters
+        </button>
+        </div>
+      </div>
+
+
     </div>
-  </ng-container>
-  <div class="text-center py-4" *ngIf="hasMoreMovies()">
-    <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded" (click)="loadMoreMovies()">Show More</button>
   </div>
 </div>
+
+<!-- Movie List Section (4/5 width) -->
+<div class="w-full bg-white bg-opacity-75 rounded-lg shadow-lg p-4">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-4">Movie List</h2>
+
+  <div class="py-3 sm:max-w-xl sm:mx-auto">
+    <ng-container *ngFor="let movie of movies">
+      <app-movie-item [item]=movie></app-movie-item>
+    </ng-container>
+    <div class="text-center py-4" *ngIf="hasMoreMovies() && sortApplied && filtersApplied">
+      <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded" (click)="loadMoreMovies()">Show More</button>
+    </div>
+  </div>

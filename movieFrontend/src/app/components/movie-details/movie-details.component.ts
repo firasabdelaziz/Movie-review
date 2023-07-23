@@ -17,15 +17,18 @@ export class MovieDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // Subscribe to changes in the route parameters to get the movie ID
     this.route.paramMap.subscribe(params => {
       const movieId = Number(params.get('id'));
+      // Fetch the movie details based on the retrieved movie ID
       this.fetchMovie(movieId);
     });
   }
 
+  // Fetches movie details from the MovieService using the provided ID
   fetchMovie(id: number): void {
     this.movieService.getMovie(id).subscribe(movie => {
-      this.movie = movie;
+      this.movie = movie; // Update the 'movie' property with the retrieved movie data
     });
   }
 }

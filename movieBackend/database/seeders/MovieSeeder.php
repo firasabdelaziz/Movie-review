@@ -13,23 +13,38 @@ class MovieSeeder extends Seeder
      */
     public function run()
     {
-        // Define sample data for movies
+        // Static image for use in seeder
+        static $image = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/1LRLLWGvs5sZdTzuMqLEahb88Pc.jpg";
+
         $movies = [
             [
                 'title' => 'Sample Movie 1',
                 'description' => 'This is the first sample movie description.',
                 'writer' => 'Sample Writer 1',
-                'image' => 'https://example.com/sample1.jpg',
-                'date' => '2023-07-17',
+                'image' => $image,
+                'date' => '2023-08-17',
             ],
             [
                 'title' => 'Sample Movie 2',
                 'description' => 'This is the second sample movie description.',
                 'writer' => 'Sample Writer 2',
-                'image' => 'https://example.com/sample2.jpg',
+                'image' => $image,
                 'date' => '2023-07-18',
             ],
-            // Add more movies if needed
+            [
+                'title' => 'Sample Movie 3',
+                'description' => 'This is the third sample movie description.',
+                'writer' => 'Sample Writer 3',
+                'image' => $image,
+                'date' => '2023-09-18',
+            ],
+            [
+                'title' => 'Sample Movie 4',
+                'description' => 'This is the four sample movie description.',
+                'writer' => 'Sample Writer 4',
+                'image' => $image,
+                'date' => '2023-09-18',
+            ],
         ];
 
         // Loop through the movies and insert them into the database

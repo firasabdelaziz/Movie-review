@@ -129,16 +129,15 @@ Before running the application, make sure to configure the backend API URL in th
 
 ```
 movieFrontend/
-|-- e2e/
 |-- src/
 |   |-- app/
 |   |   |-- components/
 |   |   |   |-- movie-details/
 |   |   |   |   |-- movie-details.component.ts
 |   |   |   |   |-- movie-details.component.html
-|   |   |   |-- movie-filter/
-|   |   |   |   |-- movie-filter.component.ts
-|   |   |   |   |-- movie-filter.component.html
+|   |   |   |-- movie-item/
+|   |   |   |   |-- movie-item.component.ts
+|   |   |   |   |-- movie-item.component.html
 |   |   |   |-- movie-list/
 |   |   |   |   |-- movie-list.component.ts
 |   |   |   |   |-- movie-list.component.html
@@ -151,6 +150,9 @@ movieFrontend/
 |   |   |-- app.component.html
 |   |   |-- app.component.css
 |   |   |-- app.module.ts
+|   |   |-- environements/
+|   |   |-- environement.dev.ts
+|   |   |-- environement.prod.ts
 |   |-- assets/
 |   |-- environments/
 |   |   |-- environment.prod.ts
