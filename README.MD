@@ -43,7 +43,11 @@ By using logging, the API can keep track of various events, such as:
 
 **Log Viewer Integration:** The API integrates a log viewer package to enhance debugging and monitoring. The log viewer provides visualizations and analytics, making it easier to understand application activities and trends.
 
+## Getting Started :white_check_mark:
 
+To ensure code quality and reliability, the Movie Review API includes unit tests. Unit tests are written to validate the functionality of different components and ensure that they behave as expected. By having a comprehensive test suite, the API can be confidently refactored or modified without introducing unintended bugs.
+
+The API utilizes popular testing frameworks like PHPUnit for PHP to create and run the unit tests. These tests can be executed automatically during development, continuous integration, or before deploying to production, ensuring that the API functions correctly under various scenarios.
 
 ## Getting Started :rocket:
 
@@ -58,6 +62,8 @@ To set up the Movie Review API locally, follow these steps:
 6. Set up your database credentials in the `.env` file.
 7. Run database migrations: `php artisan migrate`
 8. Seed initial data (optional): `php artisan db:seed`
+8. Run unit tests: `composer test`
+
 
 Once the setup is complete, you can start the local development server: `php artisan serve` :computer:
 
