@@ -153,10 +153,11 @@ movieFrontend/
 |   |   |-- environements/
 |   |   |-- environement.dev.ts
 |   |   |-- environement.prod.ts
+|   |   |-- environments/
+|   |   |   |-- environment.prod.ts
+|   |   |   |-- environment.ts
+
 |   |-- assets/
-|   |-- environments/
-|   |   |-- environment.prod.ts
-|   |   |-- environment.ts
 |   |-- index.html
 |   |-- styles.scss
 |-- .angular.json
