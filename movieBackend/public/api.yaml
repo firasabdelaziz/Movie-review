@@ -1,0 +1,126 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Movie API
+  description: API for managing movies
+basePath: /api
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /movies:
+    get:
+      summary: Retrieve a list of movies
+      responses:
+        '200':
+          description: Successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Movie'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ErrorMessage'
+    post:
+      summary: Create a new movie
+      parameters:
+        - name: movie
+          in: body
+          description: Movie object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/Movie'
+      responses:
+        '200':
+          description: Successful operation
+          schema:
+            $ref: '#/definitions/Movie'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ErrorMessage'
+  /movies/{id}:
+    get:
+      summary: Retrieve a specific movie by ID
+      parameters:
+        - name: id
+          in: path
+          description: ID of the movie to retrieve
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Successful operation
+          schema:
+            $ref: '#/definitions/Movie'
+        '404':
+          description: Movie not found
+          schema:
+            $ref: '#/definitions/ErrorMessage'
+    put:
+      summary: Update an existing movie
+      parameters:
+        - name: id
+          in: path
+          description: ID of the movie to update
+          required: true
+          type: integer
+        - name: movie
+          in: body
+          description: Movie object that needs to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/Movie'
+      responses:
+        '200':
+          description: Successful operation
+          schema:
+            $ref: '#/definitions/Movie'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ErrorMessage'
+    delete:
+      summary: Delete a movie by ID
+      parameters:
+        - name: id
+          in: path
+          description: ID of the movie to delete
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Successful operation
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ErrorMessage'
+definitions:
+  Movie:
+    type: object
+    properties:
+      id:
+        type: integer
+      title:
+        type: string
+      release_date:
+        type: string
+        format: date
+      director:
+        type: string
+      genre:
+        type: string
+  ErrorMessage:
+    type: object
+    properties:
+      message:
+        type: string
