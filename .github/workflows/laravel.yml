@@ -17,7 +17,7 @@ jobs:
         php-version: '8.1'
 
     - name: Install dependencies
-      run: composer install
+      run: cd movieBackend && composer install
 
     - name: Create environment file
       run: cp .env.example .env
