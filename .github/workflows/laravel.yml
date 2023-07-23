@@ -20,10 +20,10 @@ jobs:
       run: cd movieBackend && composer install
 
     - name: Create environment file
-      run: cp .env.example .env
+      run: cd movieBackend && cp .env.example .env
 
     - name: Generate application key
-      run: php artisan key:generate
+      run: cd movieBackend && php artisan key:generate
 
     - name: Run tests
-      run: php artisan test
+      run: cd movieBackend && php artisan test
