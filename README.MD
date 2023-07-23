@@ -43,11 +43,15 @@ By using logging, the API can keep track of various events, such as:
 
 **Log Viewer Integration:** The API integrates a log viewer package to enhance debugging and monitoring. The log viewer provides visualizations and analytics, making it easier to understand application activities and trends.
 
-## Getting Started :white_check_mark:
+## Unit Tests :white_check_mark:
 
 To ensure code quality and reliability, the Movie Review API includes unit tests. Unit tests are written to validate the functionality of different components and ensure that they behave as expected. By having a comprehensive test suite, the API can be confidently refactored or modified without introducing unintended bugs.
 
 The API utilizes popular testing frameworks like PHPUnit for PHP to create and run the unit tests. These tests can be executed automatically during development, continuous integration, or before deploying to production, ensuring that the API functions correctly under various scenarios.
+
+## GitHub Actions Pipeline for Unit Tests :🕵️:
+
+A GitHub Actions pipeline has been set up to automatically run unit tests whenever a commit is made to the main branch. This ensures that changes to the codebase are tested for functionality and reliability.
 
 ## Getting Started :rocket:
 
