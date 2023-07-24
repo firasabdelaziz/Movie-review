@@ -155,17 +155,14 @@ movieFrontend/
 |   |   |   |-- movie.model.ts
 |   |   |-- services/
 |   |   |   |-- movie.service.ts
+|   |   |-- environments/
+|   |   |   |-- environment.prod.ts
+|   |   |   |-- environment.ts
 |   |   |-- app-routing.module.ts
 |   |   |-- app.component.ts
 |   |   |-- app.component.html
 |   |   |-- app.component.css
 |   |   |-- app.module.ts
-|   |   |-- environements/
-|   |   |-- environement.dev.ts
-|   |   |-- environement.prod.ts
-|   |   |-- environments/
-|   |   |   |-- environment.prod.ts
-|   |   |   |-- environment.ts
 
 |   |-- assets/
 |   |-- index.html

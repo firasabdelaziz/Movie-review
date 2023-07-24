@@ -19,4 +19,4 @@ Backend filtering and sorting logic can be designed to be reusable across multip
 
 The backend can preprocess the data, optimizing it for filtering and sorting operations. This preprocessing can lead to faster response times for specific queries, enhancing the overall user experience.
 
-In conclusion, implementing filtering and sorting on the backend side is the most sensible approach for the Movie Reviews application. It provides better performance, data integrity, security, scalability, code reusability, consistency, and easier frontend development. By making this choice, we ensure a functional and maintainable application that meets the specified criteria.
+In conclusion, implementing filtering and sorting on the backend side is the most sensible approach for the Movie Reviews application. It provides better scalability. By making this choice, we ensure a functional and maintainable application that meets the specified criteria.
